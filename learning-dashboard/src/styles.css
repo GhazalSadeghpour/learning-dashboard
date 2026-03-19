@@ -1,0 +1,16 @@
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #F8FAFC;
+  color: #0F172A;
+}
+
+.page-title {
+  color: #0F172A;
+}
+
+.skill-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+}

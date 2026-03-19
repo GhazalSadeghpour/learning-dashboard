@@ -1,0 +1,68 @@
+.skills-page {
+  padding: 24px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.page-title {
+  margin: 0 0 24px 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 500px));
+  gap: 24px;
+  justify-content: center;
+}
+
+.skill-card {
+  width: 100%;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+mat-card-header {
+  padding-bottom: 8px;
+}
+
+mat-card-title {
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+mat-card-subtitle {
+  color: #64748b;
+  font-size: 15px;
+}
+
+mat-card-content p {
+  color: #334155;
+  line-height: 1.5;
+}
+
+.progress-text {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+mat-card-actions {
+  padding: 8px 16px 16px;
+  display: flex;
+  gap: 8px;
+}
+
+button[mat-button] {
+  border-radius: 8px;
+}
+
+.example-header-image {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  border-radius: 50%;
+}
