@@ -82,22 +82,23 @@ User → Angular UI → API Service → FastAPI → Database → Response → UI
 ## 📁 Project Structure
 
 ### Frontend
-app/
-  core/
-  features/
-    dashboard/
-    skills/
-    projects/
-  shared/
+    app/
+      core/
+      features/
+        dashboard/
+        skills/
+        projects/
+      shared/
+    
 ### Backend
-app/
-  routes/
-  services/
-  models/
-  schemas/
-  database/
+    app/
+      routes/
+      services/
+      models/
+      schemas/
+      database/
+   
 ---
-
 ## 💡 Purpose
 
 This project is built as a practical way to:
