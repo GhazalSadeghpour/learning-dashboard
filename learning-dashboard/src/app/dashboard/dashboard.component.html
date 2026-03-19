@@ -1,8 +1,88 @@
-<p>dashboard works!</p>
-<mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-<mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-</mat-grid-list>
+ <div class="page-header">
+    <h1 class="page-title">{{ title }}</h1>
+    <p class="page-subtitle">{{ subtitle }}</p>
+  </div>
+
+  <div class="dashboard-section current-focus-card">
+    <h2>{{ currentFocus.title }}</h2>
+    <p>{{ currentFocus.summary }}</p>
+
+    <h3>This week</h3>
+    <ul>
+      <li *ngFor="let weekItem of currentFocus.thisWeek">
+        {{ weekItem }}
+      </li>
+    </ul>
+
+    <p class="next-step">
+      <strong>Next step:</strong> {{ currentFocus.nextStep }}
+    </p>
+  </div>
+
+  <div class="dashboard-section">
+    <h2>Overview</h2>
+    <div class="stats-grid">
+      <div class="stat-card" *ngFor="let statCard of stats">
+        <h3>{{ statCard.value }}</h3>
+        <p class="stat-label">{{ statCard.label }}</p>
+        <p class="stat-description">{{ statCard.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-section">
+    <h2>Skills in Development</h2>
+    <div class="skills-grid">
+      <div class="skill-card" *ngFor="let skillItem of skillsInProgress">
+        <div class="skill-header">
+          <h3>{{ skillItem.skill }}</h3>
+          <span class="category-chip">{{ skillItem.category }}</span>
+        </div>
+
+        <div class="progress-wrapper">
+          <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="skillItem.progress"></div>
+          </div>
+          <span class="progress-text">{{ skillItem.progress }}%</span>
+        </div>
+
+        <p class="next-step">
+          <strong>Next step:</strong> {{ skillItem.nextStep }}
+        </p>
+
+        <button mat-raised-button class="update-button">Update</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-section">
+    <h2>Active Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of projects">
+        <h3>{{ project.name }}</h3>
+        <p><strong>Stack:</strong> {{ project.stack }}</p>
+        <p><strong>Status:</strong> {{ project.status }}</p>
+        <p><strong>Next task:</strong> {{ project.nextTask }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-section weekly-progress-grid">
+    <div class="weekly-card">
+      <h2>Done This Week</h2>
+      <ul>
+        <li *ngFor="let doneItem of weeklyProgress.done">
+          {{ doneItem }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="weekly-card">
+      <h2>Next Up</h2>
+      <ul>
+        <li *ngFor="let nextItem of weeklyProgress.nextUp">
+          {{ nextItem }}
+        </li>
+      </ul>
+    </div>
+  </div>

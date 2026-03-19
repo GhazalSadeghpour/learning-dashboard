@@ -1,16 +1,50 @@
-html, body { height: 100%; }
+:root {
+  --bg: #f8f5f0;
+  --surface: #ffffff;
+  --surface-2: #f2ece4;
+  --border: #e5ddd2;
+
+  --text: #2b2622;
+  --muted: #6f675f;
+
+  --accent: #b07d62;
+  --accent-hover: #94654c;
+  --success: #7a9b76;
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 4px 12px rgba(70, 50, 30, 0.06);
+  --shadow-md: 0 8px 24px rgba(70, 50, 30, 0.08);
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+}
+
+html,
 body {
   margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
-  background: #F8FAFC;
-  color: #0F172A;
+  padding: 0;
+  min-height: 100%;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+* {
+  box-sizing: border-box;
 }
 
-.page-title {
-  color: #0F172A;
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }
 
-.skill-card {
-  background: #FFFFFF;
-  border-radius: 16px;
+button {
+  font: inherit;
 }

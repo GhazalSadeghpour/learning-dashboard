@@ -4,22 +4,22 @@
   <div class="skills-grid">
     <mat-card class="skill-card" appearance="outlined" *ngFor="let course of courses">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        
         <mat-card-title>{{ course.title }}</mat-card-title>
         <mat-card-subtitle>{{ course.subtitle }}</mat-card-subtitle>
       </mat-card-header>
 
-      <mat-progress-bar
-        mode="determinate"
-        [value]="course.percentage_done">
-      </mat-progress-bar>
-
+        <mat-progress-bar
+      class="beige-progress"
+      mode="determinate"
+      [value]="course.percentage_done">
+    </mat-progress-bar>
+    <div class="progress-text">{{ course.percentage_done }}%</div>
       <mat-card-content>
         <p>{{ course.description }}</p>
       </mat-card-content>
-
       <mat-card-actions>
-        <button mat-raised-button color="primary">Update</button>
+        <button mat-raised-button color="beige">Update</button>
         <button mat-stroked-button>Mark As Done</button>
         <button mat-button>Archive</button>
       </mat-card-actions>

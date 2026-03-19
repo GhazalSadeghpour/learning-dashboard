@@ -18,23 +18,15 @@
   gap: 12px;
 }
 
-.navbar button {
-  margin: 0;
-  border-radius: 10px;
+.page-shell{
+  padding: 24px 32px
 }
 
-body {
-  margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
-  background: #f8fafc;
-  color: #0f172a;
+.beige-toolbar {
+  background: #e8dcc8;
+  color: #3e3228;
 }
 
-.page-title {
-  color: #0f172a;
-}
-
-.skill-card {
-  background: #ffffff;
-  border-radius: 16px;
+.navbar-button{
+    color:#808000;
 }

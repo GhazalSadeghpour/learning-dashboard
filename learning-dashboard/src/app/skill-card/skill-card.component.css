@@ -1,6 +1,6 @@
 .skills-page {
   padding: 24px;
-  background: #f8fafc;
+  background: #f4ede3;
   min-height: 100vh;
 }
 
@@ -8,10 +8,11 @@
   margin: 0 0 24px 0;
   font-size: 30px;
   font-weight: 700;
-  color: #1e293b;
+  color: #4a3b2f;
 }
 
 .skills-grid {
+  margin: 20px;
   display: grid;
   grid-template-columns: repeat(2, minmax(320px, 500px));
   gap: 24px;
@@ -21,9 +22,10 @@
 .skill-card {
   width: 100%;
   border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  background: #fffaf3;
+  box-shadow: 0 4px 14px rgba(74, 59, 47, 0.10);
   overflow: hidden;
+  border: 1px solid #e6d8c3;
 }
 
 mat-card-header {
@@ -31,25 +33,25 @@ mat-card-header {
 }
 
 mat-card-title {
-  color: #0f172a;
+  color: #6f5a46;
   font-size: 24px;
   font-weight: 700;
 }
 
 mat-card-subtitle {
-  color: #64748b;
+  color: #7f6248;
   font-size: 15px;
 }
 
 mat-card-content p {
-  color: #334155;
+  color: #5c4a3d;
   line-height: 1.5;
 }
 
 .progress-text {
   margin-top: 12px;
   font-weight: 600;
-  color: #2563eb;
+  color: #7a5c40;
 }
 
 mat-card-actions {
@@ -60,9 +62,22 @@ mat-card-actions {
 
 button[mat-button] {
   border-radius: 8px;
+  color: #6f5a46;
 }
 
 .example-header-image {
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  background: linear-gradient(135deg, #d8c3a5, #b89b7a);
   border-radius: 50%;
+}
+
+.beige-progress ::ng-deep .mdc-linear-progress__bar-inner {
+  border-color: #9a7a58 !important;
+}
+
+.beige-progress ::ng-deep .mdc-linear-progress__buffer-bar {
+  background-color: #e8dcc8 !important;
+}
+
+.progress-text, .beige-progress{
+  margin:20px;
 }

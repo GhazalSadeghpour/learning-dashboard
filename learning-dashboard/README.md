@@ -1,27 +1,98 @@
-# LearningDashboard
+# LearningDashboard(Learning OS)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
-## Development server
+Learning OS is a full-stack developer dashboard designed to track skills, projects, certifications, and learning progress in a structured and visual way.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The goal of this project is to build a real, evolving system while applying software engineering principles such as modular design, separation of concerns, and incremental development.
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🚀 Features
 
-## Build
+- Track skills with progress and next steps
+- Manage active projects and learning goals
+- Weekly progress tracking
+- Dashboard with current focus and priorities
+- Designed for continuous iteration and improvement
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🧱 Architecture Overview
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The application follows a modular full-stack architecture with clear separation between frontend, backend, and data layers.
 
-## Running end-to-end tests
+### Frontend (Angular)
+- Component-based architecture
+- Feature-based structure (dashboard, skills, projects)
+- Services used for API communication
+- Focus on reusable UI components and clean layout
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Backend (FastAPI)
+- REST API design
+- Handles business logic and validation
+- Structured into routes, services, and models
 
-## Further help
+### Database (PostgreSQL)
+- Relational schema for structured data
+- Designed for scalability and clean data relationships
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## 🔁 Data Flow
+
+User → Angular UI → API Service → FastAPI → Database → Response → UI
+
+---
+
+## 🧠 Design Decisions
+
+- Angular was chosen for its strong structure and scalability for frontend applications
+- FastAPI was chosen for its simplicity and performance for backend services
+- PostgreSQL was chosen for reliable relational data storage
+- Focus was placed on simplicity first, with room for future scalability
+
+---
+
+## ⚖️ Tradeoffs
+
+- Authentication is not implemented yet to keep the initial version simple
+- Minimal backend logic in early versions to prioritize frontend structure
+- No caching layer yet to avoid premature optimization
+
+---
+
+## 🔧 Future Improvements
+
+- Add authentication and role-based access control
+- Implement CI/CD pipeline
+- Add logging and monitoring
+- Introduce AI features for learning recommendations
+- Improve performance and scalability
+
+---
+
+## 📁 Project Structure
+
+### Frontend
+app/
+  core/
+  features/
+    dashboard/
+    skills/
+    projects/
+  shared/
+### Backend
+app/
+  routes/
+  services/
+  models/
+  schemas/
+  database/
+---
+
+## 💡 Purpose
+
+This project is built as a practical way to:
+- Improve full-stack engineering skills
+- Apply software architecture concepts
+- Build a real, evolving system instead of isolated demos

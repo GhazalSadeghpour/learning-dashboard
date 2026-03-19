@@ -1,11 +1,12 @@
-<mat-toolbar color="primary" class="topbar">
+<mat-toolbar class="beige-toolbar">
   <span class="logo">Learning Dashboard</span>
   <span class="example-spacer"></span>
 
-  <div class="navbar">
+  <div class="navbar navbar-button">
     <button mat-raised-button routerLink="/dashboard">Dashboard</button>
     <button mat-raised-button routerLink="/skills-card">Skills</button>
   </div>
 </mat-toolbar>
-
-<router-outlet></router-outlet>
+<main class="page-shell">
+  <router-outlet></router-outlet>
+</main>
