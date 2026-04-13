@@ -1,0 +1,23 @@
+# ------------------
+# Backend / Python
+# ------------------
+backend/.venv/
+backend/.pytest_cache/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/.env
+backend/.env.*
+
+# ------------------
+# Frontend / Angular
+# ------------------
+frontend/node_modules/
+frontend/.angular/
+frontend/dist/
+frontend/coverage/
+
+# ------------------
+# Editor / OS
+# ------------------
+.DS_Store
+Thumbs.db
