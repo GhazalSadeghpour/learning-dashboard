@@ -11,24 +11,24 @@ The goal is to make the existing project run cleanly before adding new features.
 ### App setup
 
 - [ ] Frontend runs locally
-- [ ] Backend runs locally
-- [ ] Database runs locally
+- [x] Backend runs locally
+- [x] Database runs locally
 - [ ] README explains how to run the project
 
 ### Backend
 
-- [ ] There is one clear backend entry point
-- [ ] `/health` endpoint works
-- [ ] Backend imports are clean
-- [ ] Backend connects to the database
-- [ ] No duplicate/confusing mock backend entry point
+- [x] There is one clear backend entry point
+- [x] `/health` endpoint works
+- [x] Backend imports are clean
+- [x] Backend connects to the database
+- [x] No duplicate/confusing mock backend entry point
 
 ### Database
 
-- [ ] PostgreSQL setup is documented
-- [ ] `.env.example` exists
-- [ ] Database connection string is clear
-- [ ] Docker Compose exists for PostgreSQL
+- [x] PostgreSQL setup is documented
+- [x] `.env.example` exists
+- [x] Database connection string is clear
+- [x] Docker Compose exists for PostgreSQL
 
 ### Frontend
 
