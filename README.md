@@ -40,6 +40,15 @@ The application follows a modular full-stack architecture with clear separation 
 - Handles business logic and validation
 - Structured into routes, services, and models
 
+## Backend Run Command
+
+The active backend entry point is:
+
+```bash
+cd backend
+uvicorn app.main:app --reload
+```
+
 ### Database (PostgreSQL)
 - Relational schema for structured data
 - Designed for scalability and clean data relationships
