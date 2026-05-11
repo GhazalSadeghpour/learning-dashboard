@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: learning_dashboard_db
+    environment:
+      POSTGRES_DB: learning_dashboard
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - learning_dashboard_data:/var/lib/postgresql/data
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  learning_dashboard_data:
