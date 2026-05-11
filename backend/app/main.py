@@ -28,3 +28,9 @@ def health_check():
 def db_health_check(db: Session = Depends(get_db)):
     result = db.execute(text("SELECT 1")).scalar()
     return {"database": "ok", "result": result}
+
+@app.get("/skills")
+def get_skills(db: Session = Depends(get_db)):
+    result = db.execute(text("SELECT * FROM skills"))
+    skills = [dict(row) for row in result.mappings().all()]
+    return {"Skills": skills}
