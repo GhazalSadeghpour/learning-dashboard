@@ -1,83 +1,178 @@
-.skills-page {
-  padding: 24px;
-  background: #f4ede3;
-  min-height: 100vh;
+.skills-section {
+  padding: 2rem;
 }
 
-.page-title {
-  margin: 0 0 24px 0;
-  font-size: 30px;
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  color: #6f6654;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: #4a3b2f;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.skills-grid {
-  margin: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(320px, 500px));
-  gap: 24px;
-  justify-content: center;
+h2 {
+  margin: 0;
+  color: #252018;
+  font-size: 1.8rem;
 }
 
-.skill-card {
-  width: 100%;
-  border-radius: 16px;
-  background: #fffaf3;
-  box-shadow: 0 4px 14px rgba(74, 59, 47, 0.10);
-  overflow: hidden;
-  border: 1px solid #e6d8c3;
-}
-
-mat-card-header {
-  padding-bottom: 8px;
-}
-
-mat-card-title {
-  color: #6f5a46;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-mat-card-subtitle {
-  color: #7f6248;
-  font-size: 15px;
-}
-
-mat-card-content p {
-  color: #5c4a3d;
+.section-description {
+  margin: 0.45rem 0 0;
+  color: #6b6255;
+  max-width: 620px;
   line-height: 1.5;
 }
 
-.progress-text {
-  margin-top: 12px;
-  font-weight: 600;
-  color: #7a5c40;
+.summary-pill {
+  background: #e6dcc8;
+  color: #332d22;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-mat-card-actions {
-  padding: 8px 16px 16px;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-card {
+  background: #fffaf1;
+  border: 1px solid #e1d6c3;
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(45, 38, 25, 0.08);
+}
+
+.card-header {
   display: flex;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
 }
 
-button[mat-button] {
-  border-radius: 8px;
-  color: #6f5a46;
+.card-header h3 {
+  margin: 0;
+  color: #2b251d;
+  font-size: 1.2rem;
 }
 
-.example-header-image {
-  background: linear-gradient(135deg, #d8c3a5, #b89b7a);
-  border-radius: 50%;
+.card-header p {
+  margin: 0.25rem 0 0;
+  color: #7a705f;
+  font-size: 0.95rem;
 }
 
-.beige-progress ::ng-deep .mdc-linear-progress__bar-inner {
-  border-color: #9a7a58 !important;
+.status-badge {
+  background: #dfe8d5;
+  color: #415336;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-.beige-progress ::ng-deep .mdc-linear-progress__buffer-bar {
-  background-color: #e8dcc8 !important;
+.status-badge.completed {
+  background: #cfe6d4;
+  color: #275238;
 }
 
-.progress-text, .beige-progress{
-  margin:20px;
+.skill-description {
+  color: #4f473d;
+  line-height: 1.5;
+  min-height: 48px;
+  margin-bottom: 1.25rem;
+}
+
+.progress-area {
+  margin-bottom: 1.25rem;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  color: #4b443b;
+  font-size: 0.9rem;
+  margin-bottom: 0.45rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: #ece3d3;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #6f8b5f;
+  border-radius: 999px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card-actions button {
+  border: none;
+  background: #2f3e2c;
+  color: white;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.card-actions button.secondary {
+  background: #d8cbb7;
+  color: #332d22;
+}
+
+.card-actions button:hover {
+  opacity: 0.9;
+}
+
+.state-message,
+.error-message {
+  background: #fffaf1;
+  border: 1px solid #e1d6c3;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #4b443b;
+}
+
+.error-message {
+  border-color: #d9a6a6;
+  color: #8a2d2d;
+}
+
+@media (max-width: 700px) {
+  .skills-section {
+    padding: 1rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+  }
+
+  .summary-pill {
+    align-self: flex-start;
+  }
 }

@@ -1,55 +1,39 @@
-import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { Component, OnInit } from '@angular/core';
+import { ApiService, Skill, SkillsResponse } from '../services/api.service';
 
 @Component({
   selector: 'app-skill-card',
   templateUrl: './skill-card.component.html',
-  styleUrls: ['./skill-card.component.css'],
-  
+  styleUrls: ['./skill-card.component.css']
 })
+export class SkillCardComponent implements OnInit {
+  title = 'Skills in development';
 
-export class SkillCardComponent {
+  courses: Skill[] = [];
+  isLoading = false;
+  errorMessage = '';
 
-title: string = 'Skills in development';
+  constructor(private apiService: ApiService) {}
 
-  courses = [
-    {
-      id: 1,
-      title: 'Angular',
-      subtitle: 'Frontend',
-      percentage_done: 20,
-      description: 'Building components, routing, and using Angular Material.',
-      archived: false,
-      completed: false
-    },
-    {
-      id: 2,
-      title: 'TypeScript',
-      subtitle: 'Frontend',
-      percentage_done: 10,
-      description: 'Learning strong typing, interfaces, and cleaner JavaScript development.',
-      archived: false,
-      completed: false
-    },
-    {
-      id: 3,
-      title: 'FastAPI',
-      subtitle: 'Backend',
-      percentage_done: 30,
-      description: 'Creating APIs, routes, and backend services with Python.',
-      archived: false,
-      completed: false
-    },
-    {
-      id: 4,
-      title: 'PostgreSQL',
-      subtitle: 'Database',
-      percentage_done: 0,
-      description: 'Working with relational databases, tables, and SQL queries.',
-      archived: false,
-      completed: false
-    }
-  ];
+  ngOnInit(): void {
+    this.loadSkills();
+  }
+
+  loadSkills(): void {
+    this.isLoading = true;
+    this.errorMessage = '';
+
+    this.apiService.getSkills().subscribe({
+      next: (response: SkillsResponse) => {
+        console.log('Skills response from backend:', response);
+        this.courses = response.skills ?? [];
+        this.isLoading = false;
+      },
+      error: (error: unknown) => {
+        console.error('Could not load skills:', error);
+        this.errorMessage = 'Could not load skills from the backend.';
+        this.isLoading = false;
+      }
+    });
+  }
 }

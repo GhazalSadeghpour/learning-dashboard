@@ -1,28 +1,62 @@
-<div class="skills-page">
-  <h2 class="page-title">{{ title }}</h2>
+<section class="skills-section">
+  <div class="section-header">
+    <div>
+      <p class="eyebrow">Current Focus</p>
+      <h2>{{ title }}</h2>
+      <p class="section-description">
+        Skills currently being built and tracked through the backend database.
+      </p>
+    </div>
 
-  <div class="skills-grid">
-    <mat-card class="skill-card" appearance="outlined" *ngFor="let course of courses">
-      <mat-card-header>
-        
-        <mat-card-title>{{ course.title }}</mat-card-title>
-        <mat-card-subtitle>{{ course.subtitle }}</mat-card-subtitle>
-      </mat-card-header>
-
-        <mat-progress-bar
-      class="beige-progress"
-      mode="determinate"
-      [value]="course.percentage_done">
-    </mat-progress-bar>
-    <div class="progress-text">{{ course.percentage_done }}%</div>
-      <mat-card-content>
-        <p>{{ course.description }}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="beige">Update</button>
-        <button mat-stroked-button>Mark As Done</button>
-        <button mat-button>Archive</button>
-      </mat-card-actions>
-    </mat-card>
+    <div class="summary-pill">
+      {{ courses.length }} skills
+    </div>
   </div>
-</div>
+
+  <div *ngIf="isLoading" class="state-message">
+    Loading skills...
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!isLoading && !errorMessage" class="skills-grid">
+    <article *ngFor="let course of courses" class="skill-card">
+      <div class="card-header">
+        <div>
+          <h3>{{ course.title }}</h3>
+          <p>{{ course.subtitle }}</p>
+        </div>
+
+        <span class="status-badge" [class.completed]="course.completed">
+          {{ course.completed ? 'Done' : 'In Progress' }}
+        </span>
+      </div>
+
+      <p class="skill-description">
+        {{ course.description }}
+      </p>
+
+      <div class="progress-area">
+        <div class="progress-label">
+          <span>Progress</span>
+          <strong>{{ course.percentage_done }}%</strong>
+        </div>
+
+        <div class="progress-track">
+          <div
+            class="progress-fill"
+            [style.width.%]="course.percentage_done">
+          </div>
+        </div>
+      </div>
+
+      <div class="card-actions">
+        <button type="button">Update</button>
+        <button type="button">Mark as Done</button>
+        <button type="button" class="secondary">Archive</button>
+      </div>
+    </article>
+  </div>
+</section>

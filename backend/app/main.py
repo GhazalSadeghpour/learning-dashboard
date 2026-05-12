@@ -33,4 +33,4 @@ def db_health_check(db: Session = Depends(get_db)):
 def get_skills(db: Session = Depends(get_db)):
     result = db.execute(text("SELECT * FROM skills"))
     skills = [dict(row) for row in result.mappings().all()]
-    return {"Skills": skills}
+    return {"skills": skills}
